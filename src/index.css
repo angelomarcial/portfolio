@@ -1,13 +1,312 @@
+/* Global Styles */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+.custom-navbar {
+  background-color: white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 80px;
+}
+
+.custom-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-left: 10px;
+}
+
+.logo-container {
+  margin-right: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+section {
+  padding: 60px 15px;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  text-align: left;
+  padding: 60px 15px;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 45%;
+  text-align: left;
+}
+
+.main-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #555;
+  margin-top: 10px;
+}
+
+.view-work-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  gap: 8px; /* Space between text and arrow */
+  transition: all 0.3s ease;
+}
+
+.view-work-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.view-work-button:hover .arrow {
+  transform: translateX(8px); /* Moves the arrow slightly to the right */
+}
+
+.view-work-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5689db;
+  transform: scaleX(0);
+  transform-origin: right;
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+
+.view-work-button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.view-work-button:hover span {
+  color: white;
+}
+
+.hero-memoji {
+  position: relative;
+  width: 350px;
+  margin-left: 60px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 15px;
+  background-color: #e6f0ff;
+  color: #003366;
+}
+
+.about-layout {
+  display: flex;
+  align-items: center; /* Centers text vertically */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.about-image {
+  flex: 2; /* Takes up majority of the space */
+  width: 100%; /* Ensures image scales responsively */
+  height: auto;
+}
+
+.about-text {
+  flex: 3; /* Takes up less space than the image */
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column; /* Stacks the image and text vertically */
+    align-items: center;
+  }
+
+  .about-image {
+    width: 90%; /* Scales image to fit smaller screens */
+  }
+
+  .about-text {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+
+/* About Cards */
+.about-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.about-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-card ul li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 36px;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.row .col-md-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-footer {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 50px 15px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-quote p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ffffff;
+  margin: 0;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icons a {
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+  color: #5689db;
+}
+
+.footer-copyright p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #cccccc;
 }
