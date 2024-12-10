@@ -202,14 +202,14 @@ const App = () => {
                 <i className="bi bi-envelope"></i>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/angelomarcial"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <i className="bi bi-github"></i>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/angelomarcial"
                 target="_blank"
                 rel="noopener noreferrer"
               >
