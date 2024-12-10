@@ -1,10 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import { Container, Nav, Navbar } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-
 import logo from "./images/logo.png";
 import whitelogo from "./images/whitelogo.png";
 import memoji from "./images/memoji.png";
