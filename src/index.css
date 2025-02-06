@@ -1,6 +1,8 @@
 /* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -57,6 +59,12 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+.navbar-toggler {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 section {
   padding: 60px 15px;
 }
@@ -97,55 +105,6 @@ section {
   margin-top: 10px;
 }
 
-.view-work-button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #000;
-  background-color: transparent;
-  border: 2px solid #000;
-  border-radius: 25px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  gap: 8px; /* Space between text and arrow */
-  transition: all 0.3s ease;
-}
-
-.view-work-button span {
-  position: relative;
-  z-index: 1;
-}
-
-.view-work-button:hover .arrow {
-  transform: translateX(8px); /* Moves the arrow slightly to the right */
-}
-
-.view-work-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #5689db;
-  transform: scaleX(0);
-  transform-origin: right;
-  z-index: 0;
-  transition: transform 0.3s ease;
-}
-
-.view-work-button:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.view-work-button:hover span {
-  color: white;
-}
-
 .hero-memoji {
   position: relative;
   width: 350px;
@@ -156,26 +115,26 @@ section {
 
 /* About Section */
 .about-section {
-  padding: 60px 15px;
+  padding: 110px 15px;
   background-color: #e6f0ff;
   color: #003366;
 }
 
 .about-layout {
   display: flex;
-  align-items: center; /* Centers text vertically */
+  align-items: center; 
   justify-content: space-between;
   gap: 20px;
 }
 
 .about-image {
-  flex: 2; /* Takes up majority of the space */
-  width: 100%; /* Ensures image scales responsively */
+  flex: 2; 
+  width: 100%; 
   height: auto;
 }
 
 .about-text {
-  flex: 3; /* Takes up less space than the image */
+  flex: 3; 
   text-align: left;
 }
 
@@ -190,24 +149,6 @@ section {
   margin-bottom: 20px;
   color: #333;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about-layout {
-    flex-direction: column; /* Stacks the image and text vertically */
-    align-items: center;
-  }
-
-  .about-image {
-    width: 90%; /* Scales image to fit smaller screens */
-  }
-
-  .about-text {
-    text-align: center;
-    margin-top: 20px;
-  }
-}
-
 
 /* About Cards */
 .about-card {
@@ -263,6 +204,52 @@ section {
   flex-direction: column;
 }
 
+/* Contact Section */
+.contact-section {
+  padding: 60px 15px;
+  background-color: #f9f9f9;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003366;
+}
+
+.contact-header p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form .form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #5689db;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.contact-form button:hover {
+  background-color: #003366;
+  color: #fff;
+}
+
+/* Footer */
 .custom-footer {
   background-color: #003366;
   color: #ffffff;
@@ -310,3 +297,133 @@ section {
   margin: 0;
   color: #cccccc;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 85vh; 
+    padding: 0 5px; 
+    margin-top: 100px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; 
+  }
+
+  .main-title {
+    font-size: 45px; 
+    font-weight: 700;
+    white-space: nowrap; 
+  }
+
+  .subtitle {
+    font-size: 23px;
+    font-weight: 400;
+    color: #555;
+    white-space: nowrap; 
+  }
+
+  .hero-memoji {
+    width: 400px; 
+    margin-top: -135px;
+  }
+
+  .about-card {
+    margin-bottom: 20px; 
+  }
+
+  .about-layout {
+    flex-direction: column; /* Stacks the image and text vertically */
+    align-items: center;
+  }
+
+  .about-image {
+    width: 90%; /* Scales image to fit smaller screens */
+  }
+
+  .about-text {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .custom-navbar {
+    height: 100px; 
+    padding: 20px 15px; 
+    display: flex;
+    align-items: center;
+  }
+
+  /* Ensure the navbar toggler (hamburger) is visible */
+  .navbar-toggler {
+    display: block !important; 
+  }
+
+  /* Hide the nav links when in collapsed mode */
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .navbar-collapse.show {
+    max-height: 300px; 
+  }
+
+  .navbar-collapse.hide {
+    max-height: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background: #f5f5f5; 
+    transition: background 0.3s;
+  }
+
+  .nav-links li:not(:last-child) {
+    border-bottom: none; 
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    text-decoration: none !important; 
+    color: black;
+  }
+}
+
+
+
+
+
+
+
