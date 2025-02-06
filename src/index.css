@@ -341,12 +341,12 @@ section {
   }
 
   .about-layout {
-    flex-direction: column; /* Stacks the image and text vertically */
+    flex-direction: column; 
     align-items: center;
   }
 
   .about-image {
-    width: 90%; /* Scales image to fit smaller screens */
+    width: 90%; 
   }
 
   .about-text {
@@ -356,6 +356,14 @@ section {
 }
 
 @media (max-width: 1023px) {
+  .nav-links li a {
+    text-decoration: none !important;
+  }
+
+  .nav-links li a::after {
+    display: none !important;
+    width: 0 !important;
+  }
   .custom-navbar {
     height: 100px; 
     padding: 20px 15px; 
@@ -363,12 +371,10 @@ section {
     align-items: center;
   }
 
-  /* Ensure the navbar toggler (hamburger) is visible */
   .navbar-toggler {
     display: block !important; 
   }
 
-  /* Hide the nav links when in collapsed mode */
   .navbar-collapse {
     display: flex;
     flex-direction: column;
